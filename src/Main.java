@@ -12,16 +12,16 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<ArrayList<String>> animation = new ArrayList<ArrayList<String>>();
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\happy new year 2024.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame1.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame2.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame3.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame4.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame5.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame6.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame7.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame8.txt"));
-        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames/\\frame9.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\happy new year 2024.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame1.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame2.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame3.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame4.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame5.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame6.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame7.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame8.txt"));
+        animation.add(txtToArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame9.txt"));
 
         for(int i = 10; i > 0; i--){
             System.out.println(i);
@@ -46,7 +46,7 @@ public class Main {
      * @param filename
      * @return ArrayList<String>
      */
-    public static ArrayList<String> txtTo2dArray(String filename){
+    public static ArrayList<String> txtToArray(String filename){
         ArrayList<String> array = new ArrayList<String>();
         try (Scanner myFileReader = new Scanner(new File(filename))) {
             while (myFileReader.hasNextLine()) {
