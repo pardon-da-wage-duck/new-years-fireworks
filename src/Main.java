@@ -1,17 +1,75 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+/**
+ *This program creates a short fireworks animation in the terminal in celebration of the 2024 New Years
+ * @author pardon-da-wage-duck
+ * @version 1.0
+ */
+
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArrayList<ArrayList<String>> animation = new ArrayList<ArrayList<String>>();
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\happy new year 2024.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame1.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame2.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame3.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame4.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame5.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame6.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame7.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames\\frame8.txt"));
+        animation.add(txtTo2dArray("C:\\Users\\owner\\IdeaProjects\\new-years-fireworks\\src\\images\\firework txt frames/\\frame9.txt"));
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        for(int i = 10; i > 0; i--){
+            System.out.println(i);
+            sleep(1000);
+        }
+        clearScreen();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        for(int loops = 0; loops < 10; loops++){
+            for(ArrayList<String> i: animation){
+                for(String j: i){
+                    System.out.println(j);
+                }
+                sleep(300);
+                clearScreen();
+            }
+        }
+
+    }
+
+    /**
+     * A static function that converts a text file into a 2D ArrayList.
+     * @param filename
+     * @return ArrayList<String>
+     */
+    public static ArrayList<String> txtTo2dArray(String filename){
+        ArrayList<String> array = new ArrayList<String>();
+        try (Scanner myFileReader = new Scanner(new File(filename))) {
+            while (myFileReader.hasNextLine()) {
+                String line = myFileReader.nextLine();
+                array.add(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return array;
+    }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    public static void sleep(int ms){
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
+
 }
