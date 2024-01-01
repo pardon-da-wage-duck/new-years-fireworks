@@ -42,7 +42,7 @@ public class Main {
     }
 
     /**
-     * A static function that converts a text file into a 2D ArrayList.
+     * A static function that converts a text file into an ArrayList.
      * @param filename
      * @return ArrayList<String>
      */
